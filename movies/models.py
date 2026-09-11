@@ -16,6 +16,7 @@ class Review(models.Model):
     id = models.AutoField(primary_key=True)
     comment = models.CharField(max_length=255)
     date = models.DateTimeField(auto_now_add=True)
+    reported = models.BooleanField(default=False)
     movie = models.ForeignKey(Movie,
         on_delete=models.CASCADE)
     user = models.ForeignKey(User,
